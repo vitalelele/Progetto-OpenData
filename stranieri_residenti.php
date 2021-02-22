@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Popolazione per età e sesso</title>
+		<title>Stranieri residenti</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -38,63 +38,68 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Popolazione per età e sesso</h1>
+										<h1>Stranieri residenti</h1>
 									</header>
-									<span class="image main">
 
+									<span class="image main">
+										
 <?php
 
-	$url_file_csv = "csv_files/Popolazione_Età_Anno.csv";
+	$url_file_csv = "csv_files/Stranieri_Residenti_Nazionalità_Sesso.csv";
 
 	$file_csv = fopen($url_file_csv, "r");
 
 	$n_colonne = count(fgetcsv($file_csv));
 
+  echo ' 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {"packages":["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
 
-			echo '
-			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    		<script type="text/javascript">
-      		google.charts.load("current", {"packages":["bar"]});
-      		google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
-      		function drawChart() {
-        		var data = google.visualization.arrayToDataTable([
-          		["Età", "Uomini", "Donne"],';
+        var data = google.visualization.arrayToDataTable([
+          ["Nazionalita", "Persone"],
+  ';
 
 	while(!feof($file_csv)){
 
 		$riga = fgetcsv($file_csv);
 
-		echo '
-          		["'. $riga[0] .'", '. $riga[1] .', '. $riga[2] .'],
+    $somma = $riga[1] + $riga[2];
+    $riga[0] = ucwords(strtolower($riga[0]));
 
-        		';
+    echo '[" ' . $riga[0] . ' ", '. $somma . '], ';
 
-	}
+  }
 
-	 echo '
-	 			]);
-        		var options = {
-          		chart: {
-            		title: "Popolazione per età, anno e sesso",
-            		subtitle: "Popolazione per età, anno e sesso, aggiornato al 2018",
-          		}
-        		};
+  echo '
+]);
 
-        		var chart = new google.charts.Bar(document.getElementById("columnchart_material"));
+        var options = {
+          title: "Residenti per nazionalità",
+          is3D: true,
+        };
 
-        		chart.draw(data, google.charts.Bar.convertOptions(options));
-      		}
-    		</script>
-    		<div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+        var chart = new google.visualization.PieChart(document.getElementById("piechart"));
 
-			';
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="piechart" style="width: 100%; height: 500px;"></div>
+  ';
 
 	fclose($file_csv);
 
 ?>
 
+<!--  #282c44 -->
+
+
 									</span>
+
+
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>

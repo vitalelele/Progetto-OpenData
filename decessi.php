@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Popolazione per età e sesso</title>
+		<title>Decessi</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -38,63 +38,41 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Popolazione per età e sesso</h1>
+										<h1>Decessi</h1>
 									</header>
+
 									<span class="image main">
+										<!-- qui ci va tutto il php -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
-<?php
+      function drawChart() {
 
-	$url_file_csv = "csv_files/Popolazione_Età_Anno.csv";
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
 
-	$file_csv = fopen($url_file_csv, "r");
+        var options = {
+          title: 'My Daily Activities'
+        };
 
-	$n_colonne = count(fgetcsv($file_csv));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-
-			echo '
-			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    		<script type="text/javascript">
-      		google.charts.load("current", {"packages":["bar"]});
-      		google.charts.setOnLoadCallback(drawChart);
-
-      		function drawChart() {
-        		var data = google.visualization.arrayToDataTable([
-          		["Età", "Uomini", "Donne"],';
-
-	while(!feof($file_csv)){
-
-		$riga = fgetcsv($file_csv);
-
-		echo '
-          		["'. $riga[0] .'", '. $riga[1] .', '. $riga[2] .'],
-
-        		';
-
-	}
-
-	 echo '
-	 			]);
-        		var options = {
-          		chart: {
-            		title: "Popolazione per età, anno e sesso",
-            		subtitle: "Popolazione per età, anno e sesso, aggiornato al 2018",
-          		}
-        		};
-
-        		var chart = new google.charts.Bar(document.getElementById("columnchart_material"));
-
-        		chart.draw(data, google.charts.Bar.convertOptions(options));
-      		}
-    		</script>
-    		<div id="columnchart_material" style="width: 100%; height: 500px;"></div>
-
-			';
-
-	fclose($file_csv);
-
-?>
+        chart.draw(data, options);
+      }
+    </script>
+<div id="piechart" style="width: 100%; height: 800px;"></div>
 
 									</span>
+
+
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
@@ -102,7 +80,7 @@
 							</section>
 
 					</div>
-
+					
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
