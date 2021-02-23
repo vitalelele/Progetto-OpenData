@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="images/icon.png">
 	</head>
 	<body class="is-preload">
 
@@ -42,41 +43,92 @@
 									</header>
 
 									<span class="image main">
-										<!-- qui ci va tutto il php -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+										<?php
+
+
+	$url_file_csv = "csv_files\decessi_matera_2020.csv";
+
+	$file_csv = fopen($url_file_csv, "r");
+
+	$n_colonne = count(fgetcsv($file_csv));
+
+  $d15 = 0; 
+  $d16 = 0;
+  $d17 = 0;
+  $d18 = 0;
+  $d19 = 0;
+  $d20 = 0;
+
+  $anno = 2015;
+
+  echo '
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load("current", {"packages":["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+          ["Year", "Morti"],
+  ';
 
-        var options = {
-          title: 'My Daily Activities'
-        };
+	while(!feof($file_csv)){
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		$riga = fgetcsv($file_csv);
 
-        chart.draw(data, options);
-      }
-    </script>
-<div id="piechart" style="width: 100%; height: 800px;"></div>
+    $d15 += $riga[9]; 
+    $d16 += $riga[10];
+    $d17 += $riga[11];
+    $d18 += $riga[12];
+    $d19 += $riga[13];
+    $d20 += $riga[14];
+
+  }
+
+  $anni_morti = array($d15, $d16, $d17, $d18, $d19, $d20);
+  for ($i=0; $i < 6 ; $i++) { 
+        echo '[" '. $anno.' ", '. $anni_morti[$i].'],';
+        $anno++;
+  }
+
+      echo ']);
+
+            var options = {
+
+            title: "Andamento decessi",
+            curveType: "function",
+            legend: { position: "bottom" },
+         };
+
+          var chart = new google.visualization.LineChart(document.getElementById("curve_chart"));
+
+          chart.draw(data, options);
+        }
+      </script>
+      <div id="curve_chart" style="width: 100%; height: 500px"></div>
+    ';
+
+
+
+	fclose($file_csv);
+
+
+										?>
+
 
 									</span>
 
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>Questo DataSet è stato scelto in un’ottica abbastanza triste date le circostanze, questo <i>Covid-19</i> ha reso il 2020 l’anno di picco per le morti, ma analizziamo nei dettagli.</p>
+
+									<p>Abbiamo scelto di integrare questo grafico in modo da tale da avere una visione quanto più realistica e a primo impatto, come ci suggerisce la curva difatti possiamo notare che nel 2015 le morti erano solamente di 181 abitanti che a fronte dei 60.000 che ospita Matera sono una sciocchezza.<br>
+									Tuttavia la curva inizia a salire, questo anche dovuto al fatto che la popolazione Materana presentava in quegli anni per lo più cittadini anziani, di conseguenza i tre anni successivi suggeriscono un aumento del tasso di mortalità che ci porta nel 2018 a far fronte a quasi 200 morti, ma nel 2019 invece i fatti si fanno interessanti perché il tasso di mortalità ritorna basso fino ai 185, questo fenomeno ci è stato difficile comprenderlo e ci sforziamo di capire il perché di questa diminuzione ma chissà, le persone avranno aspettato a morire per vedere Matera capitale della cultura.<br>
+									Infine troviamo la triste verità che mostra un aumento della curva, ahimè aggiornato solamente ad Aprile 2020, ma che abbiamo motivo di credere che possa solo essere aumentato, il covid ha strappato tante vite anche al meridione e ai nostri territori.<br></p>
+
+
+									<p><i>I dati relativi che trovate qui sopra sono aggiornati al 2020, sono forniti dal comune di Matera e li trovate a <a href="http://dati.comune.matera.it/dataset/progressivo-decessi-giornalieri-anno-2020" alt="" target="_blank">questo indirizzo</a>, qual’ora voleste accedervi, il tutto è completamente gratuito ed esportabile in svariati formati, tra cui JSON, XLSX o CSV.</i></p>
 								</div>
+
 							</section>
 
 					</div>
@@ -84,15 +136,8 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy;TeamONE</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

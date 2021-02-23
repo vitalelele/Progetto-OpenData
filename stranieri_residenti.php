@@ -7,13 +7,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="images/icon.png">
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header -->
+
 					<header id="header">
 						<a href="index.html" class="logo"><strong>TEAM 1</strong> <span>con amore ed impegno ❤️</span></a>
 						<nav>
@@ -21,7 +21,7 @@
 						</nav>
 					</header>
 
-				<!-- Menu -->
+
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
@@ -31,10 +31,9 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
+
 					<div id="main" class="alt">
 
-						<!-- One -->
 							<section id="one">
 								<div class="inner">
 									<header class="major">
@@ -94,40 +93,36 @@
 
 ?>
 
-<!--  #282c44 -->
-
+<!--  #282c44 colore background del tema -->
 
 									</span>
 
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p><i>Abbiamo affrontato questo dataset con grande curiosità, siamo del parere che l’intreccio culturale rende ogni paese più ricco culturalmente, e Matera con i suoi 60.000+ abitanti ne ospita altri 10.000 stranieri, ma procediamo ad indicare le etnie più diffuse.</i></p>
+
+									<p>Come ben ci si può aspettare più del 40% di tutti gli stranieri residenti a Matera sono di nazionalità Rumena e Cinese, come d’altronde un po’ ovunque sui nostri territori.<br>
+									Le motivazioni per cui si ha una forte presenza dell’etnia Rumena è sicuramente dovuta a fattori geopolitici ed economici, il tasso di sviluppo in Romania è troppo basso e le condizioni di vita sono pessime.<br>
+									Per la Cina il discorso è diverso, la maggior parte degli emigrati lo fanno per avere un lavoro stabile in quanto la Cina spesso sfrutta i dipendenti facendoli lavorare molte ore per una 	paga misera.<br>
+									Matera si mostra molto favorevole ad accogliere rifugiati e gente in cerca di speranza e di una vita felice, le etnie presenti sul territorio sono variegate e questo rende possibile anche un intreccio di cultura e tradizioni, rendendo Matera un passo avanti anche sotto questo punto di vista.
+</p>
+
+									<p><i>I dati relativi che trovate qui sopra sono aggiornati al 2018, sono forniti dal comune di Matera e li trovate a questo <a href="http://dati.comune.matera.it/dataset/stranieri-residenti-nazionalita-e-sesso-al-31-12-2018" alt="" target="_blank"> indirizzo </a>, qual’ora voleste accedervi, il tutto è completamente gratuito ed esportabile in svariati formati, tra cui JSON, XLSX o CSV.</i></p>
+
 								</div>
 							</section>
 
 					</div>
 
-				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy;TeamONE</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
 
 			</div>
 
-
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

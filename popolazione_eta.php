@@ -7,13 +7,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="images/icon.png">
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
+
 			<div id="wrapper">
 
-				<!-- Header -->
 					<header id="header">
 						<a href="index.html" class="logo"><strong>TEAM 1</strong> <span>con amore ed impegno ❤️</span></a>
 						<nav>
@@ -21,7 +21,7 @@
 						</nav>
 					</header>
 
-				<!-- Menu -->
+
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
@@ -31,10 +31,8 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
-					<div id="main" class="alt">
 
-						<!-- One -->
+					<div id="main" class="alt">
 							<section id="one">
 								<div class="inner">
 									<header class="major">
@@ -95,26 +93,23 @@
 ?>
 
 									</span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>Quando ci siamo chiesti perché analizzare la popolazione la nostra prima domanda è stata: <i>“Quale sarà l’età media della popolazione Materana?”</i>
+									Devo dire con grande orgoglio che non ci saremmo aspettati questi risultati, prima di aprire questo file e generare il grafico abbiamo supposto ci fossero più persone anziane che giovani ma con grande piacere ci dobbiamo ricredere, diamo un’occhiata ai dati insieme!
+									</p>
+									<p>Possiamo subito notare che la maggior parte della popolazione si trova in una fascia d’età che va dai 39 anni fino ai 60, rendendo questa fascia di popolazione la più presente nel territorio.
+									<br>Ma come possiamo notare i giovani non sono pochi, anzi, è forte la presenza di giovani sul territorio, prevalentemente di gente che va dai 18 ai 39 anni e con un pizzico di attenzione possiamo notare che la maggior parte di questi ragazzi sono uomini, analizzando i 20enni possiamo vedere come gli uomini siano circa 344 invece le donne solamente 285 che comunque rimane un buon numero.<br>
+									Questo per la maggior parte dovuto al fatto che le ragazze Materane sono  più propense ad intraprendere un percorso universitario al Nord e che spesso finiscono per lavorare e rimanere a vivere lì, questo fenomeno in chiave maschile è presente lo stesso ma in maniera leggermente più lieve, difatti gli uomini spesso vengono coinvolti in aziende di famiglia tramandate da tempo, come consueta abitudine del sud Italia.
+</p>
+									<p><i>I dati relativi che trovate qui sopra sono aggiornati al 2018, sono forniti dal comune di Matera e li trovate a <a href="http://dati.comune.matera.it/dataset/popolazione-eta-anno-2018" alt="" target="_blank">questo indirizzo</a>, qual’ora voleste accedervi, il tutto è completamente gratuito ed esportabile in svariati formati, tra cui JSON, XLSX o CSV.</i></p>
 								</div>
 							</section>
 
 					</div>
 
-				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy;TeamONE</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
